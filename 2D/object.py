@@ -2,6 +2,7 @@ import pygame as pg
 import numpy as np
 import math
 
+
 class Object():  # класс для создания объектов.
     def __init__(self, vertex, facets, pos, screen):
         self.vertex = vertex  # вершины
@@ -28,3 +29,7 @@ class Object():  # класс для создания объектов.
             poly[vert[0]][0] += self.x  # смещение
             poly[vert[0]][1] += self.y
         pg.draw.polygon(self.screen, (150, 200, 150), poly, 2)
+
+    def rotate_z(self, angle):
+        self.basis = np.array([(math.cos(angle), -math.sin(angle)),
+                         (math.sin(angle), math.cos(angle))])
