@@ -18,7 +18,7 @@ class World():  # класс всех объектов на экране
                         np.array([(60, 50), (-60, 50), (0, -50)]),
                         np.array([((0, 1, 2))]))
 
-        self.obj = self.get_object_from_file('cube.obj', 100, (300, 400))
+        self.obj = self.get_object_from_file('test.obj', 50, (300, 400))
 
     # функция квадрата
     def quad(self, pos, size=float or int, facets=np.array([((0, 1, 2)), ((0, 2, 3))])):
