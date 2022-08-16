@@ -1,7 +1,6 @@
 import pygame as pg
 import numpy as np
 from object import Object
-import math
 
 
 class World():  # класс всех объектов на экране
