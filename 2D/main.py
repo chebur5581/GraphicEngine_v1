@@ -1,5 +1,6 @@
 import pygame as pg
-
+import numpy as np
+import math
 
 class App():
     def __init__(self, WIDTH=1300, HEIGHT=700):
