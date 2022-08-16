@@ -18,6 +18,8 @@ class World():  # класс всех объектов на экране
                         np.array([(60, 50), (-60, 50), (0, -50)]),
                         np.array([((0, 1, 2))]))
 
+        self.plane = self.get_object_from_file('test.obj', 100, (200, 200))
+
     # функция квадрата
     def quad(self, pos, size=float or int, facets=np.array([((0, 1, 2)), ((0, 2, 3))])):
         vert = np.array([(0, 0), (size, 0), (size, size), (0, size)])
@@ -29,3 +31,15 @@ class World():  # класс всех объектов на экране
     def render_world(self):  # отрисовка всех объектов
         self.cube_1.render()
         self.figure_1.render()
+        self.plane.render()
+
+    def get_object_from_file(self, filename, size, pos):
+        vertex, faces = [], []
+        with open(filename) as f:
+            for line in f:
+                if line.startswith('v '):
+                    vertex.append([float(i) * size for i in line.split()[1:]] + [1])
+                elif line.startswith('f'):
+                    faces_ = line.split()[1:]
+                    faces.append([int(face_.split('/')[0]) - 1 for face_ in faces_])
+        return Object(vertex, faces, pos, self.screen)
