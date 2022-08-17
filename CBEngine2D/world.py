@@ -9,7 +9,11 @@ class World():  # класс всех объектов на экране
         self.create_objects()  # вызов функции создания объектов
 
     def create_objects(self):  # создание объектов с вершинами
-        self.obj = self.get_object_from_file('monkey_test.obj', 200, (300, 400))
+        self.obj = self.get_object_from_file('presets/monkey_test.obj', 200, (300, 400))
+        self.block_1 = self.quad((1000, 100), 200)
+        self.block_2 = self.quad((700, 100), 100)
+        self.block_2.rotate_z(70)
+        self.tringle = self.figure((900, 500), array([(-100, 100), (0, -85), (100, 100)]), array([((0, 1, 2))]))
 
     # функция квадрата
     def quad(self, pos, size=float or int, faces=array([((0, 1, 2)), ((0, 2, 3))])):
@@ -22,6 +26,9 @@ class World():  # класс всех объектов на экране
 
     def render_world(self):  # отрисовка всех объектов
         self.obj.render()
+        self.block_1.render()
+        self.block_2.render()
+        self.tringle.render()
 
     # импорт объекта из obj файла
     # коментов побольше чем обычно потому что код функции не совсем мой и таким обычно не пользуюсь
