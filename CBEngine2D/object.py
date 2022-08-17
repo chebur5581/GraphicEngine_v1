@@ -32,4 +32,4 @@ class Object():  # класс для создания объектов.
 
     def rotate_z(self, angle):
         self.basis = np.array([(math.cos(angle), -math.sin(angle)),
-                         (math.sin(angle), math.cos(angle))])
+                               (math.sin(angle), math.cos(angle))])
