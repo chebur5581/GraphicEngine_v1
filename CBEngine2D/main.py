@@ -12,18 +12,18 @@ class App():  # главное окно приложения
 
     def run(self):
         while True:
-            self.screen.fill((50, 50, 50))
+            self.screen.fill((50, 50, 50))  # заполнение непонятным цветом
 
             self.world.render_world()  # отрисовка всех объектов
 
-            [exit() for i in pg.event.get() if i.type == pg.QUIT]
+            [exit() for i in pg.event.get() if i.type == pg.QUIT]  # цикл проверки на закрытие окна
 
-            pg.display.set_caption(str(self.clock.get_fps()))
+            pg.display.set_caption(str(self.clock.get_fps()))  # отрисовка fps на названии окна
 
-            pg.display.flip()
-            self.clock.tick(60)
+            pg.display.flip()  # обновление экрана
+            self.clock.tick(60)  # контроль тиков/фрэйм рейта
 
 
-if __name__ == '__main__':
-    app = App()
-    app.run()
+if __name__ == '__main__':  # TODO:придумать комментарий к этой строке
+    app = App()  # создание экземпляра класса окна
+    app.run()  # запуск программы
