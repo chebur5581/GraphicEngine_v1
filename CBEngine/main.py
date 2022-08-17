@@ -3,7 +3,7 @@ from world import World
 
 
 class App():  # главное окно приложения
-    def __init__(self, WIDTH=1300, HEIGHT=700):
+    def __init__(self, WIDTH=1600, HEIGHT=800):
         pg.init()
         self.screen = pg.display.set_mode([WIDTH, HEIGHT])
         self.clock = pg.time.Clock()
